@@ -1,0 +1,33 @@
+<html ng-app="">
+<head>
+	<title>UI work on app</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<script src="angular.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+
+</head>
+<body style="padding: 50px" ng-init="employees=[
+{name:'Raju',empcode:'11ACB',dob:'22/3/2001',address:'banglore'},
+{name:'Ramesh',empcode:'12ACB',dob:'29/7/2004',address:'banglore'},
+{name:'Karl',empcode:'13ACB',dob:'12/12/2005',address:'banglore'},
+{name:'Mayank',empcode:'14ACB',dob:'21/5/2008',address:'banglore'}
+]">
+<p>
+	<input placeholder="search for..."  ng-model="searchText" style="padding: 3px,border-radius:5px;bordbee:1px solid #eee"/>
+</p>
+<div class="panel panel-primary" ng-repeat="employees in employees |filter:searchText" style="width: 300px;float:left;margin-right:10px">
+
+
+	<div class="panel-heading">{{employees.name}}</div>
+	<div class="panel-body">
+		Employee code    :{{employees.empcode}}<br/>
+		Employee dob	 :{{employees.dob}}<br/>
+	<div>	Employee address :{{employees.address}}</div>
+
+</div>
+
+</body>
+</html>
+
